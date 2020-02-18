@@ -25,10 +25,12 @@ export const carReducer= ( state= initialState, action ) => {
       name: action.payload.name,
       price: action.payload.price
     }
+    const newAdditionalPrice= action.payload.price + state.additionalPrice;
     console.log('newItem name: ',newItem.name);
       return {
         ...state,
-        car: { ...state.car, features: [...state.car.features, newItem ]  }
+        additionalPrice: newAdditionalPrice,
+        car: { ...state.car,  features: [...state.car.features, newItem ]  }
       }
 
     default: return state;
