@@ -4,14 +4,12 @@ const AdditionalFeature = props => {
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
-      <button 
-        onClick= {() => {props.buyItem({
-          id: props.feature.id,
-          name: props.feature.name,
-          price: props.feature.price
-        })}} 
+      <button
+        onClick={() => {
+          props.buyItem(props.feature)
+        }}
         className="button"
-        >Add</button>
+      >Add</button>
       {props.feature.name} (+{props.feature.price})
     </li>
   );

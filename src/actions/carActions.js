@@ -1,5 +1,5 @@
 
-export const addItem= (item) => {
+export const addItem = (item) => {
   return {
     type: 'ADD_ITEM',
     payload: {
@@ -10,7 +10,7 @@ export const addItem= (item) => {
   }
 }//end addItem
 
-export const removeItem= (item) => {
+export const removeItem = (item) => {
   return {
     type: 'REMOVE_ITEM',
     payload: {

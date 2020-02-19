@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Header = props => {
-  return ( 
+  return (
     <>
       <figure className="image is-128x128">
         <img src={props.car.image} alt={props.car.name} />

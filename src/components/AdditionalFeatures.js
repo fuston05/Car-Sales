@@ -9,15 +9,15 @@ const AdditionalFeatures = props => {
         <ol type="1">
           {props.additionalFeatures.map(item => (
             <AdditionalFeature
-              key={item.id} 
-              feature={item} 
-              buyItem= {props.buyItem}
-              />
+              key={item.id}
+              feature={item}
+              buyItem={props.buyItem}
+            />
           ))}
         </ol>
       ) : (
-        <p>Nice looking car!</p>
-      )}
+          <p>Nice looking car!</p>
+        )}
     </div>
   );
 };
