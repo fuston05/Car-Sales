@@ -6,6 +6,7 @@ const AdditionalFeature = props => {
       {/* Add an onClick that will let you add a feature to your car */}
       <button 
         onClick= {() => {props.buyItem({
+          id: props.feature.id,
           name: props.feature.name,
           price: props.feature.price
         })}} 

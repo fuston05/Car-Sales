@@ -22,16 +22,29 @@ export const carReducer= ( state= initialState, action ) => {
 
     case 'ADD_ITEM': 
     const newItem= {
+      id: action.payload.id,
       name: action.payload.name,
       price: action.payload.price
     }
     const newAdditionalPrice= action.payload.price + state.additionalPrice;
-    console.log('newItem name: ',newItem.name);
+    // console.log('newItem name: ',newItem.name);
       return {
         ...state,
         additionalPrice: newAdditionalPrice,
         car: { ...state.car,  features: [...state.car.features, newItem ]  }
       }
+
+      case 'REMOVE_ITEM': 
+      const adjustedPrice= state.additionalPrice - action.payload.price;
+      const newFeatureList= state.car.features.filter(item => {
+        return item.id !== action.payload.id;
+      })
+      console.log('newFeatureList: ', newFeatureList);
+        return {
+          ...state,
+          additionalPrice: adjustedPrice,
+          car: { ...state.car, features: newFeatureList }
+        }
 
     default: return state;
   }//end switch
